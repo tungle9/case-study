@@ -1,1 +1,1 @@
-# my-new-project
+# case-study
