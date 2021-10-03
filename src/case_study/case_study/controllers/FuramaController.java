@@ -137,14 +137,14 @@ public class FuramaController {
                     }
                     break;
                 case 5:
-                    System.out.println("1.\tDisplay list customers use service");
+                    System.out.println("1.\tDisplay list customers use case_study.service");
                     System.out.println("2.\tDisplay list customers get voucher");
                     System.out.println("3.\tReturn main menu");
                     login1 = scanner.nextInt();
                     scanner.nextLine();
                     switch (login1) {
                         case 1:
-                            System.out.println("1.\tDisplay list customers use service");
+                            System.out.println("1.\tDisplay list customers use case_study.service");
 
                             break;
 
