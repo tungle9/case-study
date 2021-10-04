@@ -1,4 +1,6 @@
-package case_study.dichvu;
+package case_study.models;
+
+import case_study.models.Person;
 
 public class Employee extends Person {
     public static final String TRUNGCAP = "TRUNG CẤP";

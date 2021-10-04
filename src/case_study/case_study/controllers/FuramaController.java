@@ -1,10 +1,7 @@
 package case_study.controllers;
 
 
-import case_study.service.BookingServiceImpl;
-import case_study.service.CustomerServiceImpl;
-import case_study.service.EmployeeServiceImpl;
-import case_study.service.FacilityServiceImpl;
+import case_study.service.*;
 
 import java.util.Scanner;
 
@@ -16,14 +13,16 @@ public class FuramaController {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContactServiceImpl contactService = new ContactServiceImpl();
         int login;
         int login1;
         do {
             System.out.println("1.\tEmployee Management \n" +
                     "2.\tCustomer Management \n" +
                     "3.\tFacility Management \n" +
-                    "4.\tPromotion Management \n" +
-                    "5.\tExit");
+                    "4.\tBooking Management \n" +
+                    "5.\tPromotion Management \n" +
+                    "6.\tExit");
             login = scanner.nextInt();
             switch (login) {
                 case 1:
@@ -49,6 +48,7 @@ public class FuramaController {
                             System.out.println("về lại menu");
                             break;
                     }
+                    break;
                 case 2:
                     System.out.println("1.\tDisplay list customers \n" +
                             "2.\tadd new customers \n" +
@@ -90,7 +90,7 @@ public class FuramaController {
 
                         case 2:
                             System.out.println("2\tAdd new facility");
-                            facilityService.addService();
+                            facilityService.add();
                             break;
                         case 3:
                             System.out.println("3\tDisplay list facility maintenance");
@@ -113,23 +113,24 @@ public class FuramaController {
                     scanner.nextLine();
                     switch (login1) {
                         case 1:
-                            System.out.println("1.\tAdd new booking");
+                            // thêm booking
+                            bookingService.add();
                             break;
                         case 2:
                             // hiển thị
                             bookingService.show();
                             break;
-
                         case 3:
                             System.out.println("3.\tCreate new constracts");
+                            contactService.contract();
                             break;
-
                         case 4:
                             System.out.println("4.\tDisplay list contracts");
                             bookingService.setToqueue();
                             break;
                         case 5:
                             System.out.println("5.\tEdit contracts");
+                            contactService.editContract();
                             break;
                         case 6:
                             System.out.println("6.\tReturn main menu");

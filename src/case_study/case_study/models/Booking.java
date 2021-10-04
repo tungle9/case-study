@@ -1,22 +1,19 @@
 package case_study.models;
 
-import case_study.dichvu.Customer;
-import case_study.dichvu.Facility;
-
 import java.util.Comparator;
 
 
 public class Booking implements Comparator<Booking> {
     private int maBooking;
-    private double batDau;
-    private double ketThuc;
+    private String batDau;
+    private String ketThuc;
     private Customer customer;
     private Facility facility;
 
     public Booking() {
     }
 
-    public Booking(int maBooking, double batDau, double ketThuc, Customer customer, Facility facility) {
+    public Booking(int maBooking, String batDau, String ketThuc, Customer customer, Facility facility) {
         this.maBooking = maBooking;
         this.batDau = batDau;
         this.ketThuc = ketThuc;
@@ -32,19 +29,19 @@ public class Booking implements Comparator<Booking> {
         this.maBooking = maBooking;
     }
 
-    public double getBatDau() {
+    public String getBatDau() {
         return batDau;
     }
 
-    public void setBatDau(double batDau) {
+    public void setBatDau(String batDau) {
         this.batDau = batDau;
     }
 
-    public double getKetThuc() {
+    public String getKetThuc() {
         return ketThuc;
     }
 
-    public void setKetThuc(double ketThuc) {
+    public void setKetThuc(String ketThuc) {
         this.ketThuc = ketThuc;
     }
 
@@ -76,10 +73,10 @@ public class Booking implements Comparator<Booking> {
     }
     @Override
     public int compare(Booking o1, Booking o2) {
-        if (o1.batDau - o2.batDau == 0) {
-            return (int) (o1.ketThuc - o2.ketThuc);
+        if (o1.batDau.compareTo(o2.batDau) == 0) {
+            return  (o1.ketThuc.compareTo(o2.ketThuc));
         } else {
-            return (int) (o1.batDau - o2.batDau);
+            return (o1.batDau.compareTo(o2.batDau));
         }
     }
 }

@@ -1,46 +1,55 @@
 package case_study.models;
 
-import case_study.dichvu.Customer;
-import case_study.dichvu.Facility;
+public class Contract {
+    private int soHopDong;
+    private double soTienCoc;
+    private double soTienThanhToan;
+    private Booking booking;
 
-public class Contract extends Booking {
-    private int soHopdong;
-    private double soTiencoc;
-    private double soTienthanhToan;
-
-    public Contract(int soHopdong, double soTiencoc, double soTienthanhToan) {
-        this.soHopdong = soHopdong;
-        this.soTiencoc = soTiencoc;
-        this.soTienthanhToan = soTienthanhToan;
+    public Contract(int soHopDong, double soTienCoc, double soTienThanhToan) {
+        this.soHopDong = soHopDong;
+        this.soTienCoc = soTienCoc;
+        this.soTienThanhToan = soTienThanhToan;
     }
 
-    public Contract(int maBooking, double batDau, double ketThuc, Customer customer, Facility facility, int soHopdong, double soTiencoc, double soTienthanhToan) {
-        super(maBooking, batDau, ketThuc, customer, facility);
-        this.soHopdong = soHopdong;
-        this.soTiencoc = soTiencoc;
-        this.soTienthanhToan = soTienthanhToan;
+    public Contract(int soHopDong, double soTienCoc, double soTienThanhToan, Booking booking) {
+        this.soHopDong = soHopDong;
+        this.soTienCoc = soTienCoc;
+        this.soTienThanhToan = soTienThanhToan;
+        this.booking = booking;
     }
-//    public int getSoHopdong() {
-//        return soHopdong;
-//    }
-//
-//    public void setSoHopdong(int soHopdong) {
-//        this.soHopdong = soHopdong;
-//    }
-//
-//    public double getSoTiencoc() {
-//        return soTiencoc;
-//    }
-//
-//    public void setSoTiencoc(double soTiencoc) {
-//        this.soTiencoc = soTiencoc;
-//    }
-//
-//    public double getSoTienthanhToan() {
-//        return soTienthanhToan;
-//    }
-//
-//    public void setSoTienthanhToan(double soTienthanhToan) {
-//        this.soTienthanhToan = soTienthanhToan;
-//    }
+
+    public int getsoHopDong() {
+        return soHopDong;
+    }
+
+    public void setsoHopDong(int soHopDong) {
+        this.soHopDong = soHopDong;
+    }
+
+    public double getsoTienCoc() {
+        return soTienCoc;
+    }
+
+    public void setsoTienCoc(double soTienCoc) {
+        this.soTienCoc = soTienCoc;
+    }
+
+    public double getsoTienThanhToan() {
+        return soTienThanhToan;
+    }
+
+    public void setsoTienThanhToan(double soTienThanhToan) {
+        this.soTienThanhToan = soTienThanhToan;
+    }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "soHopDong=" + soHopDong +
+                ", soTienCoc=" + soTienCoc +
+                ", soTienThanhToan=" + soTienThanhToan +
+                ", booking=" + booking +
+                '}';
+    }
 }

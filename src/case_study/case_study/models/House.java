@@ -1,4 +1,6 @@
-package case_study.dichvu;
+package case_study.models;
+
+import case_study.models.Facility;
 
 public class House extends Facility {
     private String tieuChuan;

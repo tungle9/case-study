@@ -1,4 +1,4 @@
-package case_study.dichvu;
+package case_study.models;
 
 public abstract class Person {
     private String name ;

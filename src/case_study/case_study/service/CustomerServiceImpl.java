@@ -1,7 +1,6 @@
 package case_study.service;
 
-import case_study.dichvu.Customer;
-import case_study.dichvu.Employee;
+import case_study.models.Customer;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,11 +12,12 @@ public class CustomerServiceImpl implements CustomerService {
     private static Scanner scanner = new Scanner(System.in);
 
     static {
-        list.add(new Customer("Phuc", 1997, "Nam", 201785, 89798798, "Phuc@gmail.com", Customer.DIAMOND, "Gia Lai"));
-        list.add(new Customer("VinhRau", 1998, "Nam", 45645, 54654621, "Vinh@gmail.com", Customer.PLATINIUM, "Gia Lai"));
+        list.add(new Customer("Phuc", 1997, "Nam", 201785, 89798798, "Phuc@gmail.com", Customer.DIAMOND, "Gia Lai", 001));
+        list.add(new Customer("VinhRau", 1998, "Nam", 45645, 54654621, "Vinh@gmail.com", Customer.PLATINIUM, "Gia Lai", 002));
     }
 
-    public static void add() {
+    @Override
+    public void add() {
         System.out.println("họ và tên");
         String name = scanner.nextLine();
         System.out.println("năm sinh ");
@@ -33,12 +33,21 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("địa chỉ ");
         String diaChi = scanner.nextLine();
         System.out.println("Loại member");
-        // chưa làm xong customer
-        Customer customer = new Customer(name, namSinh, gender, cmnd, sdt, email, Customer.MEMBER, diaChi);
+        // chưa làm xong loại customer
+        System.out.println("mã khách hàng");
+        int code = Integer.parseInt(scanner.nextLine());
+        Customer customer = new Customer(name, namSinh, gender, cmnd, sdt, email, Customer.MEMBER, diaChi, code);
         list.add(customer);
     }
 
-    public static void show() {
+    public static void showCustomer(){
+        for (Customer customer : list) {
+            System.out.println(customer);
+        }
+    }
+
+    @Override
+    public void show(){
         for (Customer customer : list) {
             System.out.println(customer);
         }
@@ -69,9 +78,8 @@ public class CustomerServiceImpl implements CustomerService {
                 customer.setSdt(sdt);
                 customer.setEmail(email);
                 customer.setAddress(diaChi);
-                customer.setTypeOfcustomer(Customer.GOLD);
-            }
-           else {
+                customer.settypeOfCustomer(Customer.GOLD);
+            } else {
                 System.out.println("Tên bạn tìm không tồn tại");
             }
         }

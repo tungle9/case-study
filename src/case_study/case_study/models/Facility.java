@@ -1,16 +1,16 @@
-package case_study.dichvu;
+package case_study.models;
 
 
 public abstract class Facility {
     private String dichVu;
-    private double dienTichsuDung;
+    private double dienTichSuDung;
     private double chiPhi;
     private int soLuong;
     private String kieuThue;
 
-    public Facility(String dichVu, double dienTichsuDung, double chiPhi, int soLuong, String kieuThue) {
+    public Facility(String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue) {
         this.dichVu = dichVu;
-        this.dienTichsuDung = dienTichsuDung;
+        this.dienTichSuDung = dienTichSuDung;
         this.chiPhi = chiPhi;
         this.soLuong = soLuong;
         this.kieuThue = kieuThue;
@@ -24,12 +24,12 @@ public abstract class Facility {
         this.dichVu = dichVu;
     }
 
-    public double getDienTichsuDung() {
-        return dienTichsuDung;
+    public double getdienTichSuDung() {
+        return dienTichSuDung;
     }
 
-    public void setDienTichsuDung(double dienTichsuDung) {
-        this.dienTichsuDung = dienTichsuDung;
+    public void setdienTichSuDung(double dienTichSuDung) {
+        this.dienTichSuDung = dienTichSuDung;
     }
 
     public double getChiPhi() {
@@ -60,7 +60,7 @@ public abstract class Facility {
     public String toString() {
         return "Facility{" +
                 "dichVu='" + dichVu + '\'' +
-                ", dienTichsuDung=" + dienTichsuDung +
+                ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhi=" + chiPhi +
                 ", soLuong=" + soLuong +
                 ", kieuThue='" + kieuThue + '\'' +
@@ -71,7 +71,7 @@ public abstract class Facility {
 //        System.out.println("dịch vụ");
 //        dichVu = scanner.nextLine();
 //        System.out.println("diện tích sử dụng ");
-//        dienTichsuDung = scanner.nextInt();
+//        dienTichSuDung = scanner.nextInt();
 //        System.out.println("chi phí ");
 //        chiPhi = scanner.nextInt();
 //        System.out.println("số lượng");

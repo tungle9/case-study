@@ -1,4 +1,5 @@
-package case_study.dichvu;
+package case_study.models;
+
 
 public class Room extends Facility {
     private String dichVufree;

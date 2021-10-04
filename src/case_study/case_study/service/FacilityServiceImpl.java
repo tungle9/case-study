@@ -1,19 +1,18 @@
 package case_study.service;
 
-import case_study.dichvu.Facility;
-import case_study.dichvu.House;
-import case_study.dichvu.Room;
-import case_study.dichvu.Villa;
+import case_study.models.Facility;
+import case_study.models.House;
+import case_study.models.Room;
+import case_study.models.Villa;
 
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
-    protected static LinkedHashMap<Facility, Integer> list = new LinkedHashMap<Facility, Integer>();
-    private static Scanner scanner = new Scanner(System.in);
+    protected static Map<Facility, Integer> list = new LinkedHashMap<>();
+    static Scanner scanner = new Scanner(System.in);
 
     public static Facility getFacility(String serviceName) {
         for (Map.Entry<Facility, Integer> map : list.entrySet()) { // lấy theo tên dịch vụ house,room....
@@ -30,15 +29,19 @@ public class FacilityServiceImpl implements FacilityService {
         list.put(new Room("Room", 500, 700000, 4, "hours", "drinking"), 0);
         list.put(new Villa("Villa", 500, 800000, 4, "hours", "VIP", 5, 100), 0);
     }
-
-    public static void show() {
+    public static void showFacility() {
         for (Facility facility : list.keySet()) {
             Integer value = list.get(facility);
             System.out.println(facility + "có key là : " + value);
         }
     }
 
-    public static void addService() {
+    @Override
+    public void show() {
+    }
+
+    @Override
+    public void add() {
         int login = 1;
         do {
             System.out.println("Service");
@@ -106,12 +109,12 @@ public class FacilityServiceImpl implements FacilityService {
             }
         } while (login != 4);
     }
-    public static void maintenance(){
+
+    public static void maintenance() {
         for (Map.Entry<Facility, Integer> map : list.entrySet()) {
-            if(map.getValue() >= 5){
+            if (map.getValue() >= 5) {
                 System.out.println(map.getKey());
-            }
-            else {
+            } else {
                 System.out.println("Không có dịch vụ nào cần bảo trì");
             }
         }
