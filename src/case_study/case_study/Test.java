@@ -6,7 +6,24 @@ import java.util.regex.Pattern;
 public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Pattern pattern = Pattern.compile("^[1-9]{1,2}/[0-9]{1,2}/[0-9]{4}$");
+//        boolean check = true ;
+//        while (check) {
+//            check = false;
+//            try {
+//                int a  = Integer.parseInt(scanner.nextLine());
+//                break;
+//            } catch (Exception e) {
+//                check = true ;
+//                System.out.println("nhập lại");
+//                System.out.println(e);
+//            }
+//        }
+//        System.out.println("đúng");
+
+
+
+
+        Pattern pattern = Pattern.compile("");
         while (true) {
             String a = scanner.nextLine();
             if (pattern.matcher(a).find()) {
@@ -16,5 +33,5 @@ public class Test {
                 System.err.println("bạn nhập sai");
             }
         }
-    }
+  }
 }

@@ -5,8 +5,12 @@ import case_study.models.Booking;
 import java.util.TreeSet;
 
 public class PromotionServiceImpl implements PromotionService {
-
     protected static TreeSet<Booking> treeSet = new TreeSet<>();
+
+    static {
+
+
+    }
 
     @Override
     public void show() {
@@ -15,7 +19,5 @@ public class PromotionServiceImpl implements PromotionService {
 
     @Override
     public void add() {
-
-
     }
 }

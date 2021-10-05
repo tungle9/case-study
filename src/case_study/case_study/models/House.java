@@ -6,11 +6,12 @@ public class House extends Facility {
     private String tieuChuan;
     private int soTang;
 
-    public House(String dichVu, double dienTichsuDung, double chiPhi, int soLuong, String kieuThue, String tieuChuan, int soTang) {
-        super(dichVu, dienTichsuDung, chiPhi, soLuong, kieuThue);
+    public House(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue, String tieuChuan, int soTang) {
+        super(maDichVu, dichVu, dienTichSuDung, chiPhi, soLuong, kieuThue);
         this.tieuChuan = tieuChuan;
         this.soTang = soTang;
     }
+
     public String getTieuChuan() {
         return tieuChuan;
     }
@@ -24,9 +25,12 @@ public class House extends Facility {
     public void setSoTang(int soTang) {
         this.soTang = soTang;
     }
+
     @Override
     public String toString() {
-        return super.toString();
+        return "House{" +
+                "tieuChuan='" + tieuChuan + '\'' +
+                ", soTang=" + soTang +
+                '}';
     }
-
 }

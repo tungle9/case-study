@@ -2,18 +2,28 @@ package case_study.models;
 
 
 public abstract class Facility {
+    private String maDichVu;
     private String dichVu;
     private double dienTichSuDung;
     private double chiPhi;
     private int soLuong;
     private String kieuThue;
 
-    public Facility(String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue) {
+    public Facility(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue) {
+        this.maDichVu = maDichVu;
         this.dichVu = dichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhi = chiPhi;
         this.soLuong = soLuong;
         this.kieuThue = kieuThue;
+    }
+
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public String getDichVu() {
@@ -24,11 +34,11 @@ public abstract class Facility {
         this.dichVu = dichVu;
     }
 
-    public double getdienTichSuDung() {
+    public double getDienTichSuDung() {
         return dienTichSuDung;
     }
 
-    public void setdienTichSuDung(double dienTichSuDung) {
+    public void setDienTichSuDung(double dienTichSuDung) {
         this.dienTichSuDung = dienTichSuDung;
     }
 
@@ -59,14 +69,16 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "dichVu='" + dichVu + '\'' +
+                "maDichVu='" + maDichVu + '\'' +
+                ", dichVu='" + dichVu + '\'' +
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhi=" + chiPhi +
                 ", soLuong=" + soLuong +
                 ", kieuThue='" + kieuThue + '\'' +
                 '}';
     }
-    //    }
+
+//    }
 //    public void nhap(){
 //        System.out.println("dịch vụ");
 //        dichVu = scanner.nextLine();

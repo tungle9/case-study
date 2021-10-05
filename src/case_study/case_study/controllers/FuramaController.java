@@ -1,6 +1,7 @@
 package case_study.controllers;
 
 
+import case_study.check_validate.CheckValidate;
 import case_study.service.*;
 
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public class FuramaController {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpl bookingService = new BookingServiceImpl();
         ContactServiceImpl contactService = new ContactServiceImpl();
-        int login;
+        int login = 0;
         int login1;
         do {
             System.out.println("1.\tEmployee Management \n" +
@@ -23,7 +24,20 @@ public class FuramaController {
                     "4.\tBooking Management \n" +
                     "5.\tPromotion Management \n" +
                     "6.\tExit");
-            login = scanner.nextInt();
+            boolean check = true;
+            while (check) {
+                check = false;
+                try {
+                    login = Integer.parseInt(scanner.nextLine());
+                } catch (Exception e) {
+                    check = true;
+                    if (login > 6) {
+                        System.out.println("mời nhập lại");
+                    }
+                    System.out.println("bị lỗi " + e);
+                    System.out.println("mời nhập lại");
+                }
+            }
             switch (login) {
                 case 1:
                     System.out.println("1.display \n" +
@@ -89,7 +103,7 @@ public class FuramaController {
                             break;
 
                         case 2:
-                            System.out.println("2\tAdd new facility");
+                            System.out.println("***\tAdd new facility***");
                             facilityService.add();
                             break;
                         case 3:
@@ -161,7 +175,11 @@ public class FuramaController {
                 case 6:
                     System.out.println("exit");
                     break;
+//                default :
+//                    System.out.println("bạn nhập không đúng số lựa chọn");
             }
-        } while (login != 6);
+
+        }
+        while (login != 6);
     }
 }

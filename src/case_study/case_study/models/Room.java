@@ -15,10 +15,10 @@ public class Room extends Facility {
         this.dichVufree = dichVufree;
     }
 
-    public Room(String dichVu, double dienTichsuDung, double chiPhi, int soLuong, String kieuThue, String dichVufree) {
-        super(dichVu, dienTichsuDung, chiPhi, soLuong, kieuThue);
-        this.dichVufree = dichVufree;
 
+    public Room(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue, String dichVufree) {
+        super(maDichVu, dichVu, dienTichSuDung, chiPhi, soLuong, kieuThue);
+        this.dichVufree = dichVufree;
     }
 }
 

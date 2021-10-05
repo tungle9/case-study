@@ -3,8 +3,8 @@ package case_study.models;
 public class Villa extends House {
     private double dienTichHoBoi;
 
-    public Villa(String dichVu, double dienTichsuDung, double chiPhi, int soLuong, String kieuThue, String tieuChuan, int soTang, double dienTichHoBoi) {
-        super(dichVu, dienTichsuDung, chiPhi, soLuong, kieuThue, tieuChuan, soTang);
+    public Villa(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue, String tieuChuan, int soTang, double dienTichHoBoi) {
+        super(maDichVu, dichVu, dienTichSuDung, chiPhi, soLuong, kieuThue, tieuChuan, soTang);
         this.dienTichHoBoi = dienTichHoBoi;
     }
 
