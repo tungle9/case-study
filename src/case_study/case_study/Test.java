@@ -23,7 +23,7 @@ public class Test {
 
 
 
-        Pattern pattern = Pattern.compile("");
+        Pattern pattern = Pattern.compile("^[V]I[P]$");
         while (true) {
             String a = scanner.nextLine();
             if (pattern.matcher(a).find()) {

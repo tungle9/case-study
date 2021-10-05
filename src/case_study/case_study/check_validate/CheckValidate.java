@@ -9,9 +9,9 @@ public class CheckValidate {
     private static Matcher matcher;
     static Scanner scanner = new Scanner(System.in);
 
-    private static final String SERVICE_VILLA = "^[S][V][V][L]-[0-9]{4}$";
-    private static final String SERVICE_HOUSE = "^[S][V][H][O]-[0-9]{4}$";
-    private static final String SERVICE_ROOM = "^[S][V][R][O]-[0-9]{4}$";
+    private static final String SERVICE_VILLA = "^[S]V[V]L-[0-9]{4}$";
+    private static final String SERVICE_HOUSE = "^[S]V[H]O-[0-9]{4}$";
+    private static final String SERVICE_ROOM = "^[S]V[R]O-[0-9]{4}$";
 
     private static final String VILLA = "^[V]i[l]l[a]$";
     private static final String HOUSE = "^[H]o[u]s[e]$";

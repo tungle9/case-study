@@ -1,6 +1,6 @@
 package case_study.service;
 
-import case_study.check_validate.CheckArea;
+import case_study.check_validate.CheckFacility;
 import case_study.check_validate.CheckValidate;
 import case_study.models.Facility;
 import case_study.models.House;
@@ -17,9 +17,9 @@ public class FacilityServiceImpl implements FacilityService {
     static Scanner scanner = new Scanner(System.in);
 
     static {
-        list.put(new House("House","SVHO-1234", 500, 50000, 4, "hours", "VIP", 5), 0);
-        list.put(new Room("Room","SVRO-1234", 500, 700000, 4, "hours", "drinking"), 0);
-        list.put(new Villa("Villa","SVVL-1234", 500, 800000, 4, "hours", "VIP", 5, 100), 0);
+        list.put(new House("House", "SVHO-1234", 500, 50000, 4, "Hours", "VIP", 5), 0);
+        list.put(new Room("Room", "SVRO-1234", 500, 700000, 4, "Hours", "drinking"), 0);
+        list.put(new Villa("Villa", "SVVL-1234", 500, 800000, 4, "Day", "VIP", 5, 100), 0);
     }
 
     public static Facility getFacility(String serviceName) {
@@ -61,20 +61,20 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.println("mã dịch vụ");
                     String dv = CheckValidate.checkServiceVilla();
                     System.out.println("diện tích sử dụng");
-                    double dienTich = Double.parseDouble(CheckArea.areaUse());
+                    double dienTich = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
-                    double chiPhi = Double.parseDouble(CheckArea.chiPhi());
-                    System.out.println("số lượng");
-                    int soLuong = Integer.parseInt(scanner.nextLine());
+                    double chiPhi = Double.parseDouble(CheckFacility.chiPhi());
+                    System.out.println("phòng có số lượng người");
+                    int soLuong = Integer.parseInt(CheckFacility.members());
                     System.out.println("kiểu thuê");
-                    String kieuThue = scanner.nextLine();
+                    String kieuThue = CheckFacility.kieuThue();
                     System.out.println("Tiêu chuẩn");
-                    String tieuChuan = scanner.nextLine();
+                    String tieuChuan =  CheckFacility.tieuChuan();
                     System.out.println("Số tầng");
-                    int soTang = Integer.parseInt(scanner.nextLine());
+                    int soTang = Integer.parseInt(CheckFacility.soTang());
                     System.out.println("diên tích hồ bơi");
-                    double hoBoi = Double.parseDouble(CheckArea.areaUse());
-                    Villa villa = new Villa(nameVilla,dv, dienTich, chiPhi, soLuong,
+                    double hoBoi = Double.parseDouble(CheckFacility.areaUse());
+                    Villa villa = new Villa(nameVilla, dv, dienTich, chiPhi, soLuong,
                             kieuThue, tieuChuan, soTang, hoBoi);
                     list.put(villa, 0);
                     break;
@@ -84,18 +84,18 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.println("Mã dịch vụ");
                     String dv1 = CheckValidate.checkServiceHouse();
                     System.out.println("diện tích sử dụng");
-                    double dienTich1 = Double.parseDouble(CheckArea.areaUse());
+                    double dienTich1 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
-                    double chiPhi1 = Double.parseDouble(CheckArea.chiPhi());
-                    System.out.println("số lượng");
-                    int soLuong1 = Integer.parseInt(scanner.nextLine());
+                    double chiPhi1 = Double.parseDouble(CheckFacility.chiPhi());
+                    System.out.println("phòng có số lượng người");
+                    int soLuong1 = Integer.parseInt(CheckFacility.members());
                     System.out.println("kiểu thuê");
-                    String kieuThue1 = scanner.nextLine();
+                    String kieuThue1 = CheckFacility.kieuThue();
                     System.out.println("Tiêu chuẩn");
-                    String tieuChuan1 = scanner.nextLine();
+                    String tieuChuan1 = CheckFacility.tieuChuan();
                     System.out.println("Số tầng");
-                    int soTang1 = Integer.parseInt(scanner.nextLine());
-                    House house = new House(nameHouse,dv1, dienTich1, chiPhi1,
+                    int soTang1 = Integer.parseInt(CheckFacility.soTang());
+                    House house = new House(nameHouse, dv1, dienTich1, chiPhi1,
                             soLuong1, kieuThue1, tieuChuan1, soTang1);
                     list.put(house, 0);
                     break;
@@ -105,16 +105,16 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.println("Mã dịch vụ");
                     String dv2 = CheckValidate.checkServiceRoom();
                     System.out.println("diện tích sử dụng");
-                    double dienTich2 = Double.parseDouble(CheckArea.areaUse());
+                    double dienTich2 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
-                    double chiPhi2 = Double.parseDouble(CheckArea.chiPhi());
-                    System.out.println("số lượng");
-                    int soLuong2 = Integer.parseInt(scanner.nextLine());
+                    double chiPhi2 = Double.parseDouble(CheckFacility.chiPhi());
+                    System.out.println("phòng có số lượng người");
+                    int soLuong2 = Integer.parseInt(CheckFacility.members());
                     System.out.println("kiểu thuê");
-                    String kieuThue2 = scanner.nextLine();
+                    String kieuThue2 = CheckFacility.kieuThue();
                     System.out.println("dịch vụ free");
                     String dVfree = scanner.nextLine();
-                    Room room = new Room(nameRoom,dv2, dienTich2, chiPhi2, soLuong2, kieuThue2, dVfree);
+                    Room room = new Room(nameRoom, dv2, dienTich2, chiPhi2, soLuong2, kieuThue2, dVfree);
                     list.put(room, 0);
                     break;
             }
