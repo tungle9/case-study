@@ -1,7 +1,5 @@
 package case_study.models;
 
-import case_study.models.Person;
-
 public class Employee extends Person {
     public static final String TRUNGCAP = "TRUNG CẤP";
     public static final String CAODANG = "CAO ĐẲNG";
@@ -10,7 +8,7 @@ public class Employee extends Person {
     private String trinhDo;
     private double salary;
 
-    public Employee(String name, int born, String gender, int cmnd, int sdt, String email, int mnv, String trinhDo, double salary) {
+    public Employee(String name, String born, String gender, int cmnd, int sdt, String email, int mnv, String trinhDo, double salary) {
         super(name, born, gender, cmnd, sdt, email);
         this.mnv = mnv;
         this.trinhDo = trinhDo;

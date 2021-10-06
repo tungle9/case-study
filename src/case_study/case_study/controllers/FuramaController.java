@@ -31,10 +31,7 @@ public class FuramaController {
                     login = Integer.parseInt(scanner.nextLine());
                 } catch (Exception e) {
                     check = true;
-                    if (login > 6) {
-                        System.out.println("mời nhập lại");
-                    }
-                    System.out.println("bị lỗi " + e);
+                    System.err.println("bị lỗi " + e);
                     System.out.println("mời nhập lại");
                 }
             }
@@ -177,6 +174,7 @@ public class FuramaController {
                     break;
 //                default :
 //                    System.out.println("bạn nhập không đúng số lựa chọn");
+//                    break;
             }
 
         }

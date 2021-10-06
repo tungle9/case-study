@@ -57,9 +57,9 @@ public class FacilityServiceImpl implements FacilityService {
             switch (login) {
                 case 1: // Villa
                     System.out.println("Tên dịch vụ");
-                    String nameVilla = CheckValidate.villa();
+                    String nameVilla = CheckValidate.checkValidate(CheckValidate.VILLA,"định dạng là Villa");
                     System.out.println("mã dịch vụ");
-                    String dv = CheckValidate.checkServiceVilla();
+                    String dv = CheckValidate.checkValidate(CheckValidate.SERVICE_VILLA,CheckValidate.mess("SVVL"));
                     System.out.println("diện tích sử dụng");
                     double dienTich = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
@@ -80,9 +80,9 @@ public class FacilityServiceImpl implements FacilityService {
                     break;
                 case 2: // house
                     System.out.println("Tên dịch vụ");
-                    String nameHouse = CheckValidate.house();
+                    String nameHouse = CheckValidate.checkValidate(CheckValidate.HOUSE,"định dạng là House");
                     System.out.println("Mã dịch vụ");
-                    String dv1 = CheckValidate.checkServiceHouse();
+                    String dv1 = CheckValidate.checkValidate(CheckValidate.SERVICE_HOUSE,CheckValidate.mess("SVHO"));
                     System.out.println("diện tích sử dụng");
                     double dienTich1 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
@@ -101,9 +101,9 @@ public class FacilityServiceImpl implements FacilityService {
                     break;
                 case 3: //room
                     System.out.println("Tên dịch vụ");
-                    String nameRoom = CheckValidate.room();
+                    String nameRoom = CheckValidate.checkValidate(CheckValidate.ROOM,"định dạng là Villa");
                     System.out.println("Mã dịch vụ");
-                    String dv2 = CheckValidate.checkServiceRoom();
+                    String dv2 = CheckValidate.checkValidate(CheckValidate.SERVICE_ROOM,CheckValidate.mess("SVRO"));
                     System.out.println("diện tích sử dụng");
                     double dienTich2 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");

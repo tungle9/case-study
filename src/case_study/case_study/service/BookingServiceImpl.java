@@ -6,6 +6,7 @@ import case_study.models.*;
 import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
+     final String FILEBOOKING = "case_study\\data\\booking.csv";
     protected static TreeSet<Booking> treeSet = new TreeSet<>(new Booking());
     static Scanner scanner = new Scanner(System.in);
 
@@ -17,8 +18,6 @@ public class BookingServiceImpl implements BookingService {
         }
         return queue1;
     }
-
-
     static {
         Booking booking2 = new Booking(123, "15/10/2000", "8/11/2000", CustomerServiceImpl.list.get(1), FacilityServiceImpl.getFacility("House"));
         Booking booking = new Booking(123, "15/10/2000", "7/11/2000", CustomerServiceImpl.list.get(0), FacilityServiceImpl.getFacility("House"));
@@ -47,6 +46,7 @@ public class BookingServiceImpl implements BookingService {
         System.out.println("không tìm thấy dịch vụ");
         return null;
     }
+
     @Override
     public void add() {
         System.out.println("nhập mã booking");
@@ -66,6 +66,7 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = new Booking(idBooking, batDau, ketThuc, customer, facility);
         treeSet.add(booking);
     }
+
     @Override
     public void show() {
         for (Booking booking : treeSet) {

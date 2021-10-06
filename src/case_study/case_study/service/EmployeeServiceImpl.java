@@ -11,9 +11,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     Scanner scanner = new Scanner(System.in);
 
     static {
-        list.add(new Employee("Thao", 1998, "nữ", 123, 0712121, "thao@98",
+        list.add(new Employee("Thao", "25/12/1995", "nữ", 123, 0712121, "thao@98",
                 123123, Employee.DAIHOC, 123123123));
-        list.add(new Employee("Ngan", 1997, "nữ", 321, 07661221, "thao@97",
+        list.add(new Employee("Ngan", "12/5/1995", "nữ", 321, 07661221, "thao@97",
                 4445577, Employee.CAODANG, 64654654));
     }
 
@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("mã nhân viên ");
         int mnv = Integer.parseInt(scanner.nextLine());
         System.out.println("năm sinh ");
-        int namSinh = Integer.parseInt(scanner.nextLine());
+        String namSinh = scanner.nextLine();
         System.out.println("GIỚI TÍNH");
         String gender = scanner.nextLine();
         System.out.println("số điện thoại");
@@ -61,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 System.out.println("mã nhân viên ");
                 int mnv = scanner.nextInt();
                 System.out.println("năm sinh ");
-                int namSinh = scanner.nextInt();
+                String namSinh = scanner.nextLine();
                 System.out.println("GIỚI TÍNH");
                 String gioiTinh = scanner.nextLine();
                 System.out.println("cmnd");

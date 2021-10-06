@@ -6,24 +6,36 @@ import java.util.regex.Pattern;
 
 public class CheckFacility {
     static Scanner scanner = new Scanner(System.in);
-    private static final String AREA = "^[1-9]{3,}$";
-    private static final String AREA2 = "^[3-9][1-9]$";
-    private static final String CHIPHI = "^[1-9][0-9]{5,}$";
-    private static final String SOLUONG = "^[1]?[1-9]?$";
-    private static final String SOTANG = "^[1-9][0-9]?$";
+    public static final String AREA = "^[1-9][0-9]{2,}$";
+    public static final String AREA2 = "^[3-9][1-9]$";
+    public static final String CHIPHI = "^[1-9][0-9]{5,}$";
+    public static final String SOLUONG = "^[1-9]|[1][0-9]$";
+    public static final String SOTANG = "^[1-9][0-9]?$";
 
-    private static final String HOURS = "^[H]o[u]r[s]$";
-    private static final String DAY = "^[D]a[y]$";
-    private static final String MONTH = "^[M]o[n]t[h]$";
+    public static final String HOURS = "^[H]o[u]r[s]$";
+    public static final String DAY = "^[D]a[y]$";
+    public static final String MONTH = "^[M]o[n]t[h]$";    // Pattern.compile("^([0]?[1-9]|[12][0-9]|3[01])/(0?[1-9]|[1][012])$");
 
-    private static final String VIP = "^[V]i[p]$";
-    private static final String BUDGET = "^[B]u[d][g]e[t]$";
+    public static final String BORN = "^([1-9]|[12][0-9]|3[01])/([1-9]|[1][012])/((19|20)[3-9][0-9])$";    //dd/mm/yyyy
+
+    public static final String VIP = "^[V]i[p]$";
+    public static final String BUDGET = "^[B]u[d][g]e[t]$";
+
+    public static String checkBorn() {
+        while (true) {
+            String born = scanner.nextLine();
+            if (Pattern.matches(BORN, born)) {
+                return born;
+            } else {
+                System.out.println("bạn nhập sai");
+            }
+        }
+    }
 
     public static String tieuChuan() {
         while (true) {
             String tieuChuan = scanner.nextLine();
-            if (Pattern.matches(VIP, tieuChuan) || Pattern.matches(BUDGET, tieuChuan))
-            {
+            if (Pattern.matches(VIP, tieuChuan) || Pattern.matches(BUDGET, tieuChuan)) {
                 return tieuChuan;
             } else {
                 System.out.println("bạn nhập sai mời nhập lại");
@@ -96,7 +108,7 @@ public class CheckFacility {
     }
 
     public static void main(String[] args) {
-        kieuThue();
+        areaUse();
 
     }
 

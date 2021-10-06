@@ -71,10 +71,11 @@ public class Booking implements Comparator<Booking> {
                 ", facility=" + facility +
                 '}';
     }
+
     @Override
     public int compare(Booking o1, Booking o2) {
         if (o1.batDau.compareTo(o2.batDau) == 0) {
-            return  (o1.ketThuc.compareTo(o2.ketThuc));
+            return (o1.ketThuc.compareTo(o2.ketThuc));
         } else {
             return (o1.batDau.compareTo(o2.batDau));
         }

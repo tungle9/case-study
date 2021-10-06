@@ -1,5 +1,6 @@
 package case_study.service;
 
+import case_study.check_validate.CheckFacility;
 import case_study.models.Customer;
 
 import java.util.LinkedList;
@@ -12,16 +13,16 @@ public class CustomerServiceImpl implements CustomerService {
     private static Scanner scanner = new Scanner(System.in);
 
     static {
-        list.add(new Customer("Phuc", 1997, "Nam", 201785, 89798798, "Phuc@gmail.com", Customer.DIAMOND, "Gia Lai", 001));
-        list.add(new Customer("VinhRau", 1998, "Nam", 45645, 54654621, "Vinh@gmail.com", Customer.PLATINIUM, "Gia Lai", 002));
+        list.add(new Customer("Phuc", "25/5/1997", "Nam", 201785, 89798798, "Phuc@gmail.com", Customer.DIAMOND, "Gia Lai", 001));
+        list.add(new Customer("VinhRau", "27/3/1997", "Nam", 45645, 54654621, "Vinh@gmail.com", Customer.PLATINIUM, "Gia Lai", 002));
     }
 
     @Override
     public void add() {
         System.out.println("họ và tên");
         String name = scanner.nextLine();
-        System.out.println("năm sinh ");
-        int namSinh = Integer.parseInt(scanner.nextLine());
+        System.out.println("ngày sinh ");
+        String namSinh = CheckFacility.checkBorn();
         System.out.println("GIỚI TÍNH");
         String gender = scanner.nextLine();
         System.out.println("cmnd");
@@ -40,14 +41,14 @@ public class CustomerServiceImpl implements CustomerService {
         list.add(customer);
     }
 
-    public static void showCustomer(){
+    public static void showCustomer() {
         for (Customer customer : list) {
             System.out.println(customer);
         }
     }
 
     @Override
-    public void show(){
+    public void show() {
         for (Customer customer : list) {
             System.out.println(customer);
         }
@@ -59,7 +60,7 @@ public class CustomerServiceImpl implements CustomerService {
                 System.out.println("họ và tên");
                 String name1 = scanner.nextLine();
                 System.out.println("năm sinh ");
-                int namSinh = Integer.parseInt(scanner.nextLine());
+                String namSinh = CheckFacility.checkBorn();
                 System.out.println("GIỚI TÍNH");
                 String gender = scanner.nextLine();
                 System.out.println("cmnd");

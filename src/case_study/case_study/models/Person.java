@@ -2,13 +2,13 @@ package case_study.models;
 
 public abstract class Person {
     private String name ;
-    private int born;
+    private String born;
     private String gender;
     private int cmnd ;
     private int sdt ;
     private String email;
 
-    public Person(String name, int born, String gender, int cmnd, int sdt, String email) {
+    public Person(String name, String born, String gender, int cmnd, int sdt, String email) {
         this.name = name;
         this.born = born;
         this.gender = gender;
@@ -27,11 +27,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getBorn() {
+    public String getBorn() {
         return born;
     }
 
-    public void setBorn(int born) {
+    public void setBorn(String born) {
         this.born = born;
     }
 
