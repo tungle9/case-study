@@ -12,18 +12,19 @@ public class Customer extends Person {
     private String address;
     private int customerCode;
 
-    public Customer(String name, String born, String gender, int cmnd, int sdt, String email, String typeOfCustomer, String address, int customerCode) {
+    public Customer(String name, String born, String gender, int cmnd, int sdt, String email,
+                    String typeOfCustomer, String address, int customerCode) {
         super(name, born, gender, cmnd, sdt, email);
         this.typeOfCustomer = typeOfCustomer;
         this.address = address;
         this.customerCode = customerCode;
     }
 
-    public Customer(String typeOfCustomer, String address, int customerCode) {
-        this.typeOfCustomer = typeOfCustomer;
-        this.address = address;
-        this.customerCode = customerCode;
-    }
+//    public Customer(String typeOfCustomer, String address, int customerCode) {
+//        this.typeOfCustomer = typeOfCustomer;
+//        this.address = address;
+//        this.customerCode = customerCode;
+//    }
 
     public String gettypeOfCustomer() {
         return typeOfCustomer;
@@ -41,7 +42,7 @@ public class Customer extends Person {
         this.address = address;
     }
 
-    public  int getCustomerCode() {
+    public int getCustomerCode() {
         return customerCode;
     }
 
@@ -55,6 +56,17 @@ public class Customer extends Person {
                 "typeOfCustomer='" + typeOfCustomer + '\'' +
                 ", address='" + address + '\'' +
                 ", customerCode=" + customerCode +
+                ", name='" + name + '\'' +
+                ", born='" + born + '\'' +
+                ", gender='" + gender + '\'' +
+                ", cmnd=" + cmnd +
+                ", sdt=" + sdt +
+                ", email='" + email + '\'' +
                 '}';
     }
+
+//    public String customerString() {
+//        return getName() + "," + getBorn() + "," + getGender() + "," + getCmnd() + "," + getSdt() + "," +
+//                getEmail() + "," + gettypeOfCustomer() + "," + getAddress() +","+ getCustomerCode();
+//    }
 }

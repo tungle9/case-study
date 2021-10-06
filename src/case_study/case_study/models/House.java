@@ -3,8 +3,8 @@ package case_study.models;
 import case_study.models.Facility;
 
 public class House extends Facility {
-    private String tieuChuan;
-    private int soTang;
+    public String tieuChuan;
+    public int soTang;
 
     public House(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue, String tieuChuan, int soTang) {
         super(maDichVu, dichVu, dienTichSuDung, chiPhi, soLuong, kieuThue);
@@ -31,6 +31,13 @@ public class House extends Facility {
         return "House{" +
                 "tieuChuan='" + tieuChuan + '\'' +
                 ", soTang=" + soTang +
+                ", maDichVu='" + maDichVu + '\'' +
+                ", dichVu='" + dichVu + '\'' +
+                ", dienTichSuDung=" + dienTichSuDung +
+                ", chiPhi=" + chiPhi +
+                ", soLuong=" + soLuong +
+                ", kieuThue='" + kieuThue + '\'' +
                 '}';
     }
 }
+

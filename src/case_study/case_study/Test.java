@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Test {
     protected static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
@@ -59,8 +60,8 @@ public class Test {
 //
 //
 //
-//        Pattern pattern = Pattern.compile("^([1-9]|[12][0-9]|3[01])/([1-9]|[1][012])/((19|20)[3-9][0-9])$");
-//        Pattern pattern1 = Pattern.compile("^((19|20)[0-9][0-9])$");
+        Pattern pattern = Pattern.compile("^([1-9]|[12][0-9]|3[01])/([1-9]|[1][012])/((19|20)[3-9][0-9])$");
+        Pattern pattern1 = Pattern.compile("^[1-9][0-9]*$");
 //        while (true) {
 //            String a = scanner.nextLine();
 //            if (pattern.matcher(a).find()) {

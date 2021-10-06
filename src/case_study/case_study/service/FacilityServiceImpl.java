@@ -6,21 +6,20 @@ import case_study.models.Facility;
 import case_study.models.House;
 import case_study.models.Room;
 import case_study.models.Villa;
+import case_study.read_write_file.WriteReadVilla;
 
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
 
 public class FacilityServiceImpl implements FacilityService {
     protected static Map<Facility, Integer> list = new LinkedHashMap<>();
     static Scanner scanner = new Scanner(System.in);
+    static Integer key = 0;
 
-    static {
-        list.put(new House("House", "SVHO-1234", 500, 50000, 4, "Hours", "VIP", 5), 0);
-        list.put(new Room("Room", "SVRO-1234", 500, 700000, 4, "Hours", "drinking"), 0);
-        list.put(new Villa("Villa", "SVVL-1234", 500, 800000, 4, "Day", "VIP", 5, 100), 0);
-    }
 
     public static Facility getFacility(String serviceName) {
         for (Map.Entry<Facility, Integer> map : list.entrySet()) { // lấy theo tên dịch vụ house,room....
@@ -41,6 +40,11 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void show() {
+        for (Map.Entry<Facility, Integer> entry : list.entrySet()) {
+            Facility facility = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(facility + "=" + value);
+        }
     }
 
     @Override
@@ -57,9 +61,9 @@ public class FacilityServiceImpl implements FacilityService {
             switch (login) {
                 case 1: // Villa
                     System.out.println("Tên dịch vụ");
-                    String nameVilla = CheckValidate.checkValidate(CheckValidate.VILLA,"định dạng là Villa");
+                    String nameVilla = CheckValidate.checkValidate(CheckValidate.VILLA, "định dạng là Villa");
                     System.out.println("mã dịch vụ");
-                    String dv = CheckValidate.checkValidate(CheckValidate.SERVICE_VILLA,CheckValidate.mess("SVVL"));
+                    String dv = CheckValidate.checkValidate(CheckValidate.SERVICE_VILLA, CheckValidate.mess("SVVL"));
                     System.out.println("diện tích sử dụng");
                     double dienTich = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
@@ -69,20 +73,21 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.println("kiểu thuê");
                     String kieuThue = CheckFacility.kieuThue();
                     System.out.println("Tiêu chuẩn");
-                    String tieuChuan =  CheckFacility.tieuChuan();
+                    String tieuChuan = CheckFacility.tieuChuan();
                     System.out.println("Số tầng");
                     int soTang = Integer.parseInt(CheckFacility.soTang());
                     System.out.println("diên tích hồ bơi");
                     double hoBoi = Double.parseDouble(CheckFacility.areaUse());
                     Villa villa = new Villa(nameVilla, dv, dienTich, chiPhi, soLuong,
                             kieuThue, tieuChuan, soTang, hoBoi);
-                    list.put(villa, 0);
+                    list.put(villa, key++);
+                    WriteReadVilla.writeFile((List<Villa>) list);
                     break;
                 case 2: // house
                     System.out.println("Tên dịch vụ");
-                    String nameHouse = CheckValidate.checkValidate(CheckValidate.HOUSE,"định dạng là House");
+                    String nameHouse = CheckValidate.checkValidate(CheckValidate.HOUSE, "định dạng là House");
                     System.out.println("Mã dịch vụ");
-                    String dv1 = CheckValidate.checkValidate(CheckValidate.SERVICE_HOUSE,CheckValidate.mess("SVHO"));
+                    String dv1 = CheckValidate.checkValidate(CheckValidate.SERVICE_HOUSE, CheckValidate.mess("SVHO"));
                     System.out.println("diện tích sử dụng");
                     double dienTich1 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
@@ -97,13 +102,13 @@ public class FacilityServiceImpl implements FacilityService {
                     int soTang1 = Integer.parseInt(CheckFacility.soTang());
                     House house = new House(nameHouse, dv1, dienTich1, chiPhi1,
                             soLuong1, kieuThue1, tieuChuan1, soTang1);
-                    list.put(house, 0);
+                    list.put(house, key++);
                     break;
                 case 3: //room
                     System.out.println("Tên dịch vụ");
-                    String nameRoom = CheckValidate.checkValidate(CheckValidate.ROOM,"định dạng là Villa");
+                    String nameRoom = CheckValidate.checkValidate(CheckValidate.ROOM, "định dạng là Room");
                     System.out.println("Mã dịch vụ");
-                    String dv2 = CheckValidate.checkValidate(CheckValidate.SERVICE_ROOM,CheckValidate.mess("SVRO"));
+                    String dv2 = CheckValidate.checkValidate(CheckValidate.SERVICE_ROOM, CheckValidate.mess("SVRO"));
                     System.out.println("diện tích sử dụng");
                     double dienTich2 = Double.parseDouble(CheckFacility.areaUse());
                     System.out.println("chi phí");
@@ -115,7 +120,7 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.println("dịch vụ free");
                     String dVfree = scanner.nextLine();
                     Room room = new Room(nameRoom, dv2, dienTich2, chiPhi2, soLuong2, kieuThue2, dVfree);
-                    list.put(room, 0);
+                    list.put(room, key++);
                     break;
             }
         } while (login != 4);

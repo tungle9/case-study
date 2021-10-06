@@ -4,12 +4,14 @@ import case_study.models.Booking;
 import case_study.models.Customer;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class ReadFileCustomer {
-    private static File customerFile = new File("case_study\\data\\customer.csv");
+public class WriteReadCustomer {
+    public static File customerFile = new File("case_study\\data\\customer.csv");
+
 
     public static void writeFile(List<Customer> customers) {
         try {
@@ -21,8 +23,8 @@ public class ReadFileCustomer {
                 bw.write(customer.toString());
                 bw.newLine();
             }
-
             bw.close();
+            fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,18 +35,29 @@ public class ReadFileCustomer {
         try {
             FileReader reader = new FileReader(customerFile);
             BufferedReader br = new BufferedReader(reader);
-            String line;
-            while ((line = br.readLine()) != null) {
-                String []read = line.split(",");
-                Customer customer = new Customer(read[0],read[1],read[2],Integer.parseInt(read[3]),);
-                list.add(line);
+            String line = "";
+            while (true) {
+                line=br.readLine();
+                if(line == null){
+                    break;
+                }
+                String  []txt = line.split(",");
+                String name  = txt[0];
+                String born = txt[1];
+                String gender = txt[2];
+                int cmnd = Integer.parseInt(txt[3]);
+                int sdt = Integer.parseInt(txt[4]);
+                String email = txt[5];
+                String typeOfCustomer = txt[6];
+                String address = txt[7];
+                int customerCode = Integer.parseInt(txt[8]);
+                Customer customer = new Customer(name,born,gender,cmnd,sdt,email
+                        ,typeOfCustomer,address,customerCode);
+                list.add(customer);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return list;
     }
-
 }

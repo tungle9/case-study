@@ -14,22 +14,24 @@ public class CheckValidate {
     public static final String VILLA = "^[V]i[l]l[a]$";
     public static final String HOUSE = "^[H]o[u]s[e]$";
     public static final String ROOM = "^[R]o[o]m$";
+    public static final String NUMBER = "^[1-9][0-9]*$";
+
 
 
     public static String checkValidate(String regex, String msg) {
         while (true) {
+            System.err.println(msg);
             String value = scanner.nextLine();
             if (Pattern.matches(regex, value)) {
                 return value;
             } else {
                 System.out.println("bạn nhập sai");
-                System.err.println(msg);
             }
         }
     }
 
     public static String mess(String mess) {
-        return "định dạng của dịch vụ là " + mess + "với YYYY là 4 chữ số";
+        return "định dạng của dịch vụ là " + mess+"-YYYY" + " với YYYY là 4 chữ số";
     }
 
     public static void main(String[] args) {
