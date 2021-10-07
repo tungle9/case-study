@@ -20,12 +20,6 @@ public class Customer extends Person {
         this.customerCode = customerCode;
     }
 
-//    public Customer(String typeOfCustomer, String address, int customerCode) {
-//        this.typeOfCustomer = typeOfCustomer;
-//        this.address = address;
-//        this.customerCode = customerCode;
-//    }
-
     public String gettypeOfCustomer() {
         return typeOfCustomer;
     }
@@ -65,8 +59,8 @@ public class Customer extends Person {
                 '}';
     }
 
-//    public String customerString() {
-//        return getName() + "," + getBorn() + "," + getGender() + "," + getCmnd() + "," + getSdt() + "," +
-//                getEmail() + "," + gettypeOfCustomer() + "," + getAddress() +","+ getCustomerCode();
-//    }
+    public String customerString() {
+        return getName() + "," + getBorn() + "," + getGender() + "," + getCmnd() + "," + getSdt() + "," +
+                getEmail() + "," + gettypeOfCustomer() + "," + getAddress() +","+ getCustomerCode();
+    }
 }

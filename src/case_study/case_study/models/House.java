@@ -39,5 +39,13 @@ public class House extends Facility {
                 ", kieuThue='" + kieuThue + '\'' +
                 '}';
     }
+
+    public House(String maDichVu, String dichVu, double dienTichSuDung, double chiPhi, int soLuong, String kieuThue) {
+        super(maDichVu, dichVu, dienTichSuDung, chiPhi, soLuong, kieuThue);
+    }
+
+//    public void a(){
+//        System.out.println("abc");
+//    }
 }
 

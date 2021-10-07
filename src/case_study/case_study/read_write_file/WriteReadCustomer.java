@@ -1,13 +1,10 @@
 package case_study.read_write_file;
 
-import case_study.models.Booking;
 import case_study.models.Customer;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 public class WriteReadCustomer {
     public static File customerFile = new File("case_study\\data\\customer.csv");
@@ -20,7 +17,7 @@ public class WriteReadCustomer {
 
 
             for (Customer customer : customers) {
-                bw.write(customer.toString());
+                bw.write(customer.customerString());
                 bw.newLine();
             }
             bw.close();

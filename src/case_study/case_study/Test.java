@@ -7,9 +7,17 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Test {
+    String abc;
     protected static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
     static Date date;
     static Scanner scanner = new Scanner(System.in);
+
+   public Test(){
+   }
+   public String ab(){
+       return "ab";
+   }
+
 
     public static Date checkBorn() {
         String age ;
@@ -29,9 +37,12 @@ public class Test {
 
 
 
+
     }
 
     public static void main(String[] args) {
+
+
 
 
 

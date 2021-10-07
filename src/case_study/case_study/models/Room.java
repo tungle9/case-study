@@ -3,6 +3,7 @@ package case_study.models;
 public class Room extends Facility {
     private String dichVufree;
 
+
     public String getDichVufree() {
         return dichVufree;
     }
@@ -28,6 +29,11 @@ public class Room extends Facility {
                 ", soLuong=" + soLuong +
                 ", kieuThue='" + kieuThue + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
+//        Room room = new House();
+
     }
 }
 

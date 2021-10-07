@@ -46,6 +46,7 @@ public class CustomerServiceImpl implements CustomerService {
 //        if (WriteReadCustomer.customerFile.length() > 0) {
 //            list = WriteReadCustomer.readFile();
 //        }
+        WriteReadCustomer.readFile();
     }
 
     public static void showCustomer() {
@@ -56,7 +57,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void show() {
-        list = WriteReadCustomer.readFile();
+//        list = WriteReadCustomer.readFile();
         for (Customer customer : list) {
             System.out.println(customer);
         }
