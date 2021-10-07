@@ -46,7 +46,7 @@ public class CustomerServiceImpl implements CustomerService {
 //        if (WriteReadCustomer.customerFile.length() > 0) {
 //            list = WriteReadCustomer.readFile();
 //        }
-        WriteReadCustomer.readFile();
+//        WriteReadCustomer.readFile();
     }
 
     public static void showCustomer() {

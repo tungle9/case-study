@@ -60,7 +60,7 @@ public class Customer extends Person {
     }
 
     public String customerString() {
-        return "Tên" + getName() + ",Ngày sinh" + getBorn() + ",Giới tính" + getGender() + "," + getCmnd() + "," + getSdt() +
-                ",Email" + getEmail() + ",loại" + gettypeOfCustomer() + ",địa chỉ" + getAddress() + "," + getCustomerCode();
+        return "Tên " + getName() + ",Ngày sinh" + getBorn() + ",Giới tính" + getGender() + ",CMND" + getCmnd() + ",SDT" + getSdt() +
+                ",Email" + getEmail() + ",loại" + gettypeOfCustomer() + ",địa chỉ" + getAddress() + ",mã khách hàng" + getCustomerCode();
     }
 }
